@@ -39,15 +39,14 @@
 </script>
 
 <div class="request-form">
-    <form action="content">
+    <form action="/">
         <input type="text" placeholder="Plugin Name" bind:value={$data.pluginName}><br>
         <input type="text" placeholder="Plugin Author" bind:value={$data.pluginAuthor}><br>
         <input type="text" placeholder="Plugin Git" bind:value={$data.pluginGit}><br>
-
-        <div class="button">
-            <button on:click={sendData}>
-                Submit
-            </button>
-        </div>
     </form>
+    <div class="button">
+        <button on:click={sendData}>
+            Submit
+        </button>
+    </div>
 </div>
