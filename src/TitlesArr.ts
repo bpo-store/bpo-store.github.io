@@ -3,7 +3,8 @@ export const Arr = [
     "Imagine BD plugin store, but worse",
     "Idk what to do",
     "I am inside your walls",
-    "Join the PBP Discord!",
     "undefined",
-    "Traceback (most recent call last):"
+    "Traceback (most recent call last):",
+    "Null",
+    "Blazingly fast 🚀🚀"
 ]
