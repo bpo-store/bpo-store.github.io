@@ -4,7 +4,6 @@
 
 <script lang="ts">
   import About from "./lib/About.svelte"
-  import Request from "./lib/Request.svelte";
   import Store from "./lib/Store.svelte"
   import { Arr } from "./TitlesArr"
 
@@ -69,8 +68,6 @@
     <Store/>
   {:else if page === 2}
     <About/>
-  {:else if page === 3}
-    <Request/>
   {:else}
     <div class="main center">
       <span class="title">PBP Store</span><br>

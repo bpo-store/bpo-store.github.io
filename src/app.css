@@ -148,6 +148,22 @@ body {
   text-decoration: none;
 }
 
+.loading {
+  display: inline-block;
+  border-style: solid;
+  border-color: #333;
+  border-radius: 10px;
+  background-color: #333;
+  padding: 5px 40px 5px 40px;
+
+  text-align: center;
+}
+
+.loading p {
+  font-size: 20px;
+  font-weight: 600;
+}
+
 /* About */
 .about {
   margin-top: 80px;
@@ -168,42 +184,4 @@ body {
 
 .about a {
   color: #1e96ff;
-}
-
-/* Requests */
-.request-form {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding-top: 100px;
-}
-
-.button {
-  padding-left: 10px;
-}
-
-.button button {
-  padding: 5px 10px 5px 10px;
-  font-size: 16px;
-  border-style: solid;
-  border-color: #333;
-  border-radius: 10px;
-  background-color: #333;
-  transition: 0.1s;
-}
-
-.button button:hover {
-  background-color: rgb(70, 70, 70);
-}
-
-.request-form form input {
-  margin-bottom: 10px;
-  font-size: 20px;
-  padding: 8px 8px 8px 8px;
-
-  border-style: solid;
-  border-color: #333;
-  border-radius: 10px;
-  background-color: #333;
 }
