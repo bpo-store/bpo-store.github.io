@@ -40,7 +40,7 @@
 	<div class="center">
 		{#await data}
 			<div class="loading">
-				<p>Loading</p>
+				<p>Loading...</p>
 			</div>
 		{:then mdArray} 
 			{#each mdArray.requests as d}
