@@ -3,7 +3,7 @@
   import Store from "./lib/Store.svelte";
   import Request from "./lib/Request.svelte";
   import { Arr } from "./TitlesArr";
-  import "./Main.css";
+  import "./Main.scss";
   import { Router, Route, Link } from "svelte-navigator";
 
   const currentSub = Arr[Math.floor(Math.random() * Arr.length)];
