@@ -1,85 +1,71 @@
-<svelte:head>
-  <script src="https://kit.fontawesome.com/dacbc752b2.js" crossorigin="anonymous"></script>
-</svelte:head>
-
 <script lang="ts">
-  import About from "./lib/About.svelte"
-  import Store from "./lib/Store.svelte"
-  import { Arr } from "./TitlesArr"
+  import About from "./lib/About.svelte";
+  import Store from "./lib/Store.svelte";
+  import Request from "./lib/Request.svelte";
+  import { Arr } from "./TitlesArr";
+  import "./Main.css";
+  import { Router, Route, Link } from "svelte-navigator";
 
-  const currentSub = Arr[Math.floor(Math.random() * Arr.length)]
-
-  var page: number;
-  function mainPage() {
-    page = 0
-  }
-  function storePage() {
-    page = 1
-  }
-  function aboutPage() {
-    page = 2
-  }
-  function requestPage() {
-    page = 3
-  }
-
+  const currentSub = Arr[Math.floor(Math.random() * Arr.length)];
 </script>
 
-<main>
-  <ul class="nav">
-    <li>
-      <button id="btn" on:click={mainPage}>
-        <i class="fa-solid fa-gamepad"></i> PBP-Store
-      </button>
-    </li>
-    <li>
-      <button on:click={storePage}>
-        Plugins
-      </button>
-    </li>
-    <li>
-      <button on:click={requestPage}>
-        Request
-      </button>
-    </li>
-    <div class="align-right">
-      <li><a href="#news">Github</a></li>
-      <li><a href="#contact">PBP Github</a></li>
-      <button on:click={aboutPage}>
-        About
-      </button>
-    </div>
-  </ul>
+<svelte:head>
+  <script
+    src="https://kit.fontawesome.com/dacbc752b2.js"
+    crossorigin="anonymous"
+  ></script>
+</svelte:head>
 
-  {#if page === 0}
-    <div class="main center">
-      <span class="title">PBP Store</span><br>
-      <span class="subtitle">{currentSub}</span>
-      <p>
-          A "Store" to facilitate the gathering of PBP plugins<br>
-          Read the About page to know how to get your plugin in here!
-      </p>
+<div class="router-container">
+  <Router>
+    <main>
+      <nav class="nav">
+        <ul>
+          <li class="li">
+            <i class="fa-solid fa-gamepad" /> <strong>PBP-Store</strong>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="/"><Link to="/">Home</Link></a>
+          </li>
+          <li>
+            <a href="plugins"><Link to="plugins">Plugins</Link></a>
+          </li>
+          <li>
+            <a href="about"><Link to="about">About</Link></a>
+          </li>
+          <li>
+            <a href="request"><Link to="request">Request</Link></a>
+          </li>
+        </ul>
+      </nav>
+    </main>
 
-      <button on:click={storePage}>
-          Let's Start!
-      </button>
-    </div>
-  {:else if page === 1}
-    <Store/>
-  {:else if page === 2}
-    <About/>
-  {:else}
-    <div class="main center">
-      <span class="title">PBP Store</span><br>
-      <span class="subtitle">{currentSub}</span>
-      <p>
-          A "Store" to facilitate the gathering of PBP plugins<br>
-          Read the About page to know how to get your plugin in here!
-      </p>
+    <Route path="/">
+      <div class="grid-container">
+        <h1>PBP Store</h1>
+        <span class="subtitle">{currentSub}</span>
+        <p class="tagline">
+          A "Store" to facilitate the gathering of PBP plugins. Read the About
+          page to know how to get your plugin in here!
+        </p>
 
-      <button on:click={storePage}>
-          Let's Start!
-      </button>
-    </div>
-  {/if}
-</main>
+        <div class="inline">
+          <button>
+            <Link class="white-text" to="plugins">Let's Start</Link>
+          </button>
+        </div>
+      </div>
+    </Route>
+    <Route path="plugins" primary={false}>
+      <Store />
+    </Route>
+    <Route path="about" primary={false}>
+      <About />
+    </Route>
+    <Route path="request" primary={false}>
+      <Request />
+    </Route>
+  </Router>
+</div>

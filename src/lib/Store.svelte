@@ -1,59 +1,44 @@
 <script lang="ts" defer>
-	const data = ghReq("pbp-store")
+  const data = ghReq(
+    "https://raw.githubusercontent.com/PBP-Store/plugins-list/main/plugins.json"
+  );
 
-	async function ghReq(user: string) {
-	    // Defines a URI to make a request
-	    let uri: string = `https://api.github.com/users/${user}/repos`
+  async function ghReq(uri: string) {
+    const response = await fetch(uri);
+    const data = await response.json();
 
-	    // Makes the request
-	    const data = await fetch(uri)
-	    const d = await data.json()
-	    var ghObject = {
-	        requests: [
-
-	        ]
-	    }
-
-	    // For every object inside the response
-	    // Get it's data and insert it to an object
-	    // After that push to ghObject
-	    for(var i = 0; i < d.length; i++) {
-	        // Index
-	        var index = d[i]
-
-	        // Res Obj
-	        var dataObj = {
-	            name: index.name,
-	            ghUrl: index.html_url,
-	            author: index.description.replace("Author: ", "")
-	        }
-
-	        // Push to ghObject
-	        ghObject.requests.push(dataObj)
-	    }
-
-	    return ghObject
-	}
+    return data;
+  }
 </script>
 
 <div class="store">
-	<div class="center">
-		{#await data}
-			<div class="loading">
-				<p>Loading...</p>
-			</div>
-		{:then mdArray} 
-			{#each mdArray.requests as d}
-				<div class="cards">
-					<div class="info">
-						<span id="Name">{d.name}</span><br>
-						<span id="Author">{d.author}</span><br>
-					</div>
-					<a href="{d.ghUrl}">
-						<i class="fa-solid fa-download"></i> Download
-					</a>
-				</div>
-			{/each}
-		{/await}
-	</div>
+  <div class="container">
+    {#await data}
+      <div class="grid-container">
+        <article>
+          <span>Loading...</span>
+        </article>
+      </div>
+    {:then mdArray}
+      {#if mdArray.plugins.length <= 0}
+        <div class="grid-container">
+          <article>
+            <span class="Nothing"
+              ><i class="fa-solid fa-dog" /> Wow! such nothing!
+            </span>
+          </article>
+        </div>
+      {:else}
+        {#each mdArray.plugins as d}
+          <article class="flex-container">
+            <span id="Name">{d.name}</span>
+            <span id="Author">{d.author}</span>
+            <a href={d.ghUrl}>
+              <i class="fa-brands fa-github-alt" /> Github
+            </a>
+          </article>
+        {/each}
+      {/if}
+    {/await}
+  </div>
 </div>
