@@ -35,9 +35,6 @@
           <li>
             <a href="about"><Link to="about">About</Link></a>
           </li>
-          <li>
-            <a href="request"><Link to="request">Request</Link></a>
-          </li>
         </ul>
       </nav>
     </main>
@@ -58,14 +55,14 @@
         </div>
       </div>
     </Route>
-    <Route path="plugins" primary={false}>
-      <Store />
-    </Route>
-    <Route path="about" primary={false}>
-      <About />
-    </Route>
-    <Route path="request" primary={false}>
-      <Request />
+    <Route path="plugins" primary={false} component={Store} />
+    <Route path="about" primary={false} component={About} />
+    <Route primary={false}>
+      <div class="grid-container">
+        <article>
+          <i class="fa-solid fa-bomb" /> <span>404 Not found</span>
+        </article>
+      </div>
     </Route>
   </Router>
 </div>

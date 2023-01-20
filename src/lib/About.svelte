@@ -7,8 +7,9 @@
     ><br /><br />
     <span>How can i add my project in?:</span><br />
 
-    Go to the request page and fill in the form with your plugin details, but to
-    it be accepted it needs to meet some criteria<br />
+    Make a new issue on the the
+    <a href="https://github.com/pbp-store/plugins-list/">plugins-list</a>
+    repo, but to it be accepted it needs to meet some criteria<br />
     - Needs to be in any language that can be compiled (Example: Dart, Rust, etc...)<br
     />
     - Needs to be <abbr title="Free and Open Source">FOSS</abbr><br />
