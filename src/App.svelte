@@ -1,7 +1,6 @@
 <script lang="ts">
   import About from "./lib/About.svelte";
   import Store from "./lib/Store.svelte";
-  import Request from "./lib/Request.svelte";
   import { Arr } from "./TitlesArr";
   import "./Main.scss";
   import { Router, Route, Link } from "svelte-navigator";
