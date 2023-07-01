@@ -21,7 +21,7 @@
       <nav class="nav">
         <ul>
           <li class="li">
-            <i class="fa-solid fa-gamepad" /> <strong>PBP-Store</strong>
+            <i class="fa-solid fa-gamepad" /> <strong>BPO Store</strong>
           </li>
         </ul>
         <ul>
