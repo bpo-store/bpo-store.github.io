@@ -1,6 +1,6 @@
 <script lang="ts" defer>
     const data = ghReq(
-        "https://raw.githubusercontent.com/BPO-Store/plugins-list/main/plugins-bpo.json"
+        "https://raw.githubusercontent.com/BPO-Store/plugins-list/main/plugins-gld.json"
     );
 
     async function ghReq(uri: string) {

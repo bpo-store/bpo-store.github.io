@@ -13,4 +13,5 @@ export const Arr = [
   "PROBE (PROject Black pEarl)",
   "Svelte is love, Svelte is life",
   "Hollistic Approach 🌱",
+    "Project GLD plugins now supported!"
 ];
