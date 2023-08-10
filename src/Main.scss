@@ -64,3 +64,15 @@ html {
 .form {
   width: 700px;
 }
+
+.themeColors{
+  display: flex;
+  justify-content: space-between; 
+  margin-top: 5px;
+}
+
+.themeColor{
+  font-size: 25px;
+  border:2px solid#babcbe;
+  border-radius: 25px;
+}

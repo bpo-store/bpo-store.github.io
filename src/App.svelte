@@ -1,6 +1,7 @@
 <script lang="ts">
     import About from "./lib/About.svelte";
     import Store from "./lib/Store.svelte";
+    import ThemeStore from "./lib/ThemeStore.svelte";
     import { Arr } from "./TitlesArr";
     import "./Main.scss";
     import { Router, Route, Link } from "svelte-navigator";
@@ -36,6 +37,11 @@
                         >
                     </li>
                     <li>
+                        <a href="themes"
+                            ><Link to="themes">Themes (BPO)</Link></a
+                        >
+                    </li> 
+                    <li>
                         <a href="plugins-gld"
                             ><Link to="plugins-gld">Scripts (Project GLD)</Link
                             ></a
@@ -65,6 +71,7 @@
             </div>
         </Route>
         <Route path="plugins" primary={false} component={Store} />
+        <Route path="themes" primary={false} component={ThemeStore} />
         <Route path="about" primary={false} component={About} />
         <Route path="plugins-gld" primary={false} component={Gld} />
         <Route primary={false}>
